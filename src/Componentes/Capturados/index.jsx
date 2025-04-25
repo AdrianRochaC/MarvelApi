@@ -6,7 +6,7 @@ function Capturados() {
 
   return (
     <>
-      <h1>Capturados</h1>
+      <h1>Heroes</h1>
     </>
   )
 }

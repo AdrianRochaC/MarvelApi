@@ -2,13 +2,13 @@ import { useState } from 'react'
 
 import './style.css'
 
-function Aleatorios() {
+function Comics() {
 
   return (
     <>
-      <h1>Villanos</h1>
+      <h1>Comics</h1>
     </>
   )
 }
 
-export default Aleatorios
+export default Comics
