@@ -1,0 +1,43 @@
+.c-aleatorio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.c-lista-personaje {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 8px;
+  width: 120px;
+  text-align: center;
+  background-color: #f0f0f0;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+}
+
+.c-lista-personaje:hover {
+  border-color: #888;
+}
+
+.c-lista-personaje.c-capturado {
+  border-color: #28a745; /* verde */
+  background-color: #e6f4ea;
+}
+
+.c-lista-personaje img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.c-lista-personaje p {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  user-select: none;
+}

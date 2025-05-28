@@ -1,6 +1,6 @@
-/* Reutiliza estilos existentes */
+/* Contenedor principal del registro */
 .r-register-container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 40px auto;
   padding: 30px;
   background-color: #1a1a1a;
@@ -10,27 +10,24 @@
   box-shadow: 0 0 20px rgba(230, 36, 41, 0.3);
 }
 
+/* Título principal */
 .r-register-title {
   text-align: center;
+  font-size: 2rem;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
+  margin-bottom: 20px;
   color: #e62429;
-  margin-bottom: 15px;
 }
 
+/* Formulario */
 .r-register-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.r-register-form label {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  color: #fff;
-}
-
+/* Inputs */
 .r-register-form input {
   padding: 10px 14px;
   font-size: 1rem;
@@ -40,13 +37,13 @@
   color: #fff;
   outline: none;
   transition: border-color 0.3s;
-  margin-top: 6px;
 }
 
 .r-register-form input:focus {
   border-color: #e62429;
 }
 
+/* Botón de registro */
 .r-register-button {
   background-color: #e62429;
   color: white;
@@ -56,13 +53,21 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
 }
 
 .r-register-button:hover {
   background-color: #b71c1c;
 }
 
+/* Texto adicional */
+.r-register-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* Botón de navegación */
 .r-register-nav-button {
   background-color: transparent;
   color: #e62429;
@@ -72,57 +77,11 @@
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.3s ease;
-  margin-top: 10px;
-  display: inline-block;
+  margin: 10px auto 0;
+  display: block;
 }
 
 .r-register-nav-button:hover {
   background-color: #e62429;
   color: #fff;
-}
-
-.r-register-text {
-  text-align: center;
-  color: #aaa;
-}
-
-/* Lista imágenes */
-.imagenes-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.imagen-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #2a2a2a;
-  padding: 10px;
-  border-radius: 8px;
-  width: 160px;
-}
-
-.imagen {
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-/* input URL en fila con botón */
-.r-register-input-url {
-  flex: 1;
-  padding: 10px 14px;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #2a2a2a;
-  color: #fff;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.r-register-input-url:focus {
-  border-color: #e62429;
 }

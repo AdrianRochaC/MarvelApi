@@ -1,0 +1,133 @@
+/* Estilos base */
+body {
+  font-family: 'Bebas Neue', 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.c-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo de cada personaje */
+.c-lista-character {
+  background: #1a1a1a;
+  border: 2px solid #e62429; /* Rojo Marvel */
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.c-lista-character:hover {
+  transform: scale(1.05);
+  background-color: #2e2e2e;
+}
+
+.c-lista-character img {
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+/* Buscador y filtro */
+.c-buscador {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 10px;
+  display: block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #e62429;
+  border-radius: 5px;
+  background-color: #111;
+  color: #fff;
+  outline: none;
+}
+
+.c-buscador::placeholder {
+  color: #aaa;
+}
+
+/* Información del filtro */
+.c-filter-info {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #e62429;
+}
+
+/* Cargando */
+.c-loading-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.c-loading-spinner {
+  margin: 20px auto;
+  border: 6px solid #2e2e2e;
+  border-top: 6px solid #e62429;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Animación spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .c-lista-character {
+    font-size: 0.9rem;
+  }
+
+  .c-buscador {
+    width: 90%;
+  }
+}
+/* Menú superior tipo Marvel */
+.c-navbar {
+  width: 100%;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #e62429;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.c-navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.c-navbar li {
+  color: #ffffff;
+  font-family: 'Bebas Neue', 'Arial', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.c-navbar li:hover {
+  background-color: #e62429;
+  color: #fff;
+}

@@ -1,13 +1,32 @@
-.c-menu{
-    background-color: silver;
-    flex-wrap: wrap;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    padding: 15px;
+/* Menú superior tipo Marvel */
+.c-menu {
+  width: 100%;
+  background-color: #1a1a1a;
+  border-bottom: 3px solid #e62429;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.c-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Bebas Neue', 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.c-menu a:hover {
+  background-color: #e62429;
+  color: #ffffff;
 }

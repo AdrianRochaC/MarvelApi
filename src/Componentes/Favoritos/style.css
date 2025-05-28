@@ -1,0 +1,43 @@
+.c-favorites-list {
+  padding: 1rem;
+}
+
+.c-favorites-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.c-favorite-item {
+  background: #222;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-favorite-thumb {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.c-favorite-info {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-remove-favorite {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

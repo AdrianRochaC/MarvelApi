@@ -1,0 +1,38 @@
+.c-capturados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.c-capturado-personaje {
+  cursor: pointer;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  padding: 8px;
+  width: 120px;
+  text-align: center;
+  background-color: #e6f4ea;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  transition: transform 0.2s ease;
+}
+
+.c-capturado-personaje:hover {
+  transform: scale(1.05);
+}
+
+.c-capturado-personaje img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.c-capturado-personaje p {
+  margin: 0;
+  font-weight: 600;
+  color: #155724;
+  user-select: none;
+}

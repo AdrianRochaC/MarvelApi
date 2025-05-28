@@ -1,0 +1,152 @@
+/* Loading y errores */
+.c-loading,
+.c-error,
+.c-not-found {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border: 2px solid #e62429;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Contenedor principal */
+.c-character-detail {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #e62429;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.4);
+}
+
+/* Botón volver */
+.c-back-button {
+  background-color: transparent;
+  color: #e62429;
+  border: 2px solid #e62429;
+  padding: 8px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.c-back-button:hover {
+  background-color: #e62429;
+  color: #fff;
+}
+
+/* Cabecera del personaje */
+.c-character-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.c-character-image {
+  width: 240px;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #e62429;
+}
+
+.c-character-title {
+  text-align: center;
+}
+
+.c-character-title h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Botón favorito */
+.c-favorite-button {
+  background-color: #e62429;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.c-favorite-button:hover {
+  background-color: #b71c1c;
+}
+
+/* Secciones */
+.c-character-section {
+  margin-top: 30px;
+}
+
+.c-character-section h2 {
+  font-size: 1.5rem;
+  color: #e62429;
+  border-bottom: 2px solid #e62429;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.c-character-info p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Listas */
+.c-list {
+  list-style: disc;
+  padding-left: 20px;
+  color: #ddd;
+}
+
+.c-list li {
+  margin-bottom: 6px;
+}
+
+/* Tipo de historia */
+.c-story-type {
+  color: #e62429;
+  font-style: italic;
+}
+
+/* Enlaces externos */
+.c-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.c-link-button {
+  background-color: #e62429;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.c-link-button:hover {
+  background-color: #b71c1c;
+}
+
+/* Footer */
+.c-character-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}

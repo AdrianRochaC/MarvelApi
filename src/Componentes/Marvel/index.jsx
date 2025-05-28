@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchCharacterById } from '../../utils/marvelAPI';
-import './style.css'; // Asegúrate de crear este archivo CSS para los estilos
+import './style.css';
 
 function Marvel() {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [esFavorito, setEsFavorito] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +17,11 @@ function Marvel() {
         setLoading(true);
         const data = await fetchCharacterById(id);
         setCharacter(data);
-        console.log("Datos completos del personaje:", data); // Para depuración
+
+        const favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+        const encontrado = favoritos.some((fav) => fav.id === parseInt(id));
+        setEsFavorito(encontrado);
+
       } catch (err) {
         setError("Error al cargar el personaje. Por favor, inténtalo de nuevo.");
         console.error("Error al obtener datos del personaje:", err);
@@ -27,6 +32,24 @@ function Marvel() {
 
     obtenerPersonaje();
   }, [id]);
+
+  const toggleFavorito = () => {
+    const favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+    if (esFavorito) {
+      const nuevosFavoritos = favoritos.filter((fav) => fav.id !== parseInt(id));
+      localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
+      setEsFavorito(false);
+    } else {
+      const nuevoFavorito = {
+        id: character.id,
+        name: character.name,
+        thumbnail: character.thumbnail
+      };
+      favoritos.push(nuevoFavorito);
+      localStorage.setItem('favoritos', JSON.stringify(favoritos));
+      setEsFavorito(true);
+    }
+  };
 
   if (loading) return <div className="c-loading">Cargando información del personaje...</div>;
   if (error) return <div className="c-error">{error}</div>;
@@ -48,7 +71,9 @@ function Marvel() {
         />
         <div className="c-character-title">
           <h1>{name}</h1>
-          <button className="c-favorite-button">❤️ Favorito</button>
+          <button className="c-favorite-button" onClick={toggleFavorito}>
+            {esFavorito ? '❤️' : '🤍'}
+          </button>
         </div>
       </div>
 
@@ -60,7 +85,7 @@ function Marvel() {
         </div>
       </div>
 
-      {comics && comics.items && comics.items.length > 0 && (
+      {comics?.items?.length > 0 && (
         <div className="c-character-section">
           <h2>Cómics ({comics.available})</h2>
           <ul className="c-list">
@@ -72,7 +97,7 @@ function Marvel() {
         </div>
       )}
 
-      {series && series.items && series.items.length > 0 && (
+      {series?.items?.length > 0 && (
         <div className="c-character-section">
           <h2>Series ({series.available})</h2>
           <ul className="c-list">
@@ -84,7 +109,7 @@ function Marvel() {
         </div>
       )}
 
-      {stories && stories.items && stories.items.length > 0 && (
+      {stories?.items?.length > 0 && (
         <div className="c-character-section">
           <h2>Historias ({stories.available})</h2>
           <ul className="c-list">
@@ -98,7 +123,7 @@ function Marvel() {
         </div>
       )}
 
-      {events && events.items && events.items.length > 0 && (
+      {events?.items?.length > 0 && (
         <div className="c-character-section">
           <h2>Eventos ({events.available})</h2>
           <ul className="c-list">
@@ -110,7 +135,7 @@ function Marvel() {
         </div>
       )}
 
-      {urls && urls.length > 0 && (
+      {urls?.length > 0 && (
         <div className="c-character-section">
           <h2>Enlaces</h2>
           <div className="c-links">
